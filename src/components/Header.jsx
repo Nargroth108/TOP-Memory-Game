@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import "../styles/Header.css";
 
 export default function Header({ setArtist, cardData }) {
+  const [highScore, setHighScore] = useState(0);
+
   function handleKeyDown(e) {
     if (e.key === "Enter") {
       setArtist(e.target.value);
@@ -12,6 +15,14 @@ export default function Header({ setArtist, cardData }) {
   cardData.map((card) => {
     if (card.clicked === true) score += 1;
   });
+
+  function checkForHighScore() {
+    if (score > highScore) {
+      setHighScore(score);
+    } else return;
+  }
+
+  checkForHighScore();
 
   return (
     <header>
@@ -35,7 +46,7 @@ export default function Header({ setArtist, cardData }) {
         </div>
         <div className="scoreContainer">
           <p className="score">Score: {score}</p>
-          <p className="bestScore">Best Score: 0</p>
+          <p className="bestScore">Best Score: {highScore}</p>
         </div>
       </div>
     </header>
