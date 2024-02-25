@@ -1,0 +1,65 @@
+header {
+  padding: 1em;
+  display: grid;
+  gap: 1em;
+  justify-items: center;
+}
+
+h1,
+.description {
+  margin-bottom: 1em;
+}
+
+.descriptionContainer,
+.sideContainer {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.sideContainer {
+  display: grid;
+  gap: 1em;
+  height: fit-content;
+}
+
+.scoreContainer,
+.inputContainer {
+  display: flex;
+  gap: 1em;
+}
+
+.scoreContainer {
+  gap: 3em;
+}
+.description {
+  font-style: italic;
+}
+
+input {
+  width: 150px;
+}
+
+#submit {
+  width: 64px;
+}
+
+@media (min-width: 600px) {
+  header {
+    grid-template-columns: 300px 1fr;
+    gap: 10em;
+  }
+
+  .descriptionContainer,
+  .sideContainer {
+    text-align: left;
+  }
+
+  .sideContainer {
+    width: 100%;
+    padding-right: 2em;
+    align-items: center;
+    justify-items: end;
+    height: auto;
+  }
+}
