@@ -1,17 +1,13 @@
 /* eslint-disable react/prop-types */
 import "../styles/CardField.css";
+import Card from "./Card";
 
 export default function CardField({ cardData }) {
   return (
     <div className="cardField" key={"cardField"}>
-      {cardData.map((card) => {
-        return (
-          <section key={card.id} className="card">
-            <img src={card.url} alt={card.name} />
-            <h4 className="cardTitle">{card.name}</h4>
-          </section>
-        );
-      })}
+      {cardData.map((card) => (
+        <Card key={card.id} card={card} />
+      ))}
     </div>
   );
 }
