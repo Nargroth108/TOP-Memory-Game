@@ -1,6 +1,13 @@
+/* eslint-disable react/prop-types */
 import "../styles/Header.css";
 
-export default function Header() {
+export default function Header({ setArtist }) {
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      setArtist(e.target.value);
+    }
+  }
+
   return (
     <header>
       <div className="descriptionContainer">
@@ -13,9 +20,13 @@ export default function Header() {
       <div className="sideContainer">
         <div className="inputContainer">
           <label htmlFor="artist">
-            <input type="text" name="artist" id="artist" />
+            <input
+              type="text"
+              name="artist"
+              id="artist"
+              onKeyDown={handleKeyDown}
+            />
           </label>
-          <input type="submit" name="submit" id="submit" />
         </div>
         <div className="scoreContainer">
           <p className="score">Score: 1</p>

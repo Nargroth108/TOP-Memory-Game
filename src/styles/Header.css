@@ -36,14 +36,6 @@ h1,
   font-style: italic;
 }
 
-input {
-  width: 150px;
-}
-
-#submit {
-  width: 64px;
-}
-
 @media (min-width: 600px) {
   header {
     grid-template-columns: 300px 1fr;
