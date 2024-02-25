@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
 import "../styles/Header.css";
 
-export default function Header({ setArtist }) {
+export default function Header({ setArtist, cardData }) {
   function handleKeyDown(e) {
     if (e.key === "Enter") {
       setArtist(e.target.value);
     }
   }
+
+  let score = 0;
+  cardData.map((card) => {
+    if (card.clicked === true) score += 1;
+  });
 
   return (
     <header>
@@ -29,8 +34,8 @@ export default function Header({ setArtist }) {
           </label>
         </div>
         <div className="scoreContainer">
-          <p className="score">Score: 1</p>
-          <p className="bestScore">Best Score: 1</p>
+          <p className="score">Score: {score}</p>
+          <p className="bestScore">Best Score: 0</p>
         </div>
       </div>
     </header>
