@@ -12,8 +12,25 @@ export default function App() {
       const j = Math.floor(Math.random() * i);
       const temp = array[i];
       array[i] = array[j];
+      array[i].id = i;
       array[j] = temp;
+      array[j].id = j;
     }
+  }
+
+  function changeCardClickedValue(card) {
+    const newCardData = cardData.map((item, index) => {
+      if (index === card.id) {
+        item.clicked = true;
+        return item;
+      } else {
+        return item;
+      }
+    });
+
+    shuffleArray(newCardData);
+
+    setCardData(newCardData);
   }
 
   useEffect(() => {
@@ -50,12 +67,16 @@ export default function App() {
     };
   }, [artist]);
 
-  // console.log(cardData);
+  console.log(cardData);
 
   return (
     <>
       <Header setArtist={setArtist} cardData={cardData} />
-      <CardField key={"cardField"} cardData={cardData} />
+      <CardField
+        key={"cardField"}
+        cardData={cardData}
+        changeCardClickedValue={changeCardClickedValue}
+      />
     </>
   );
 }
