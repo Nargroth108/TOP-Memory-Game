@@ -1,0 +1,7 @@
+.cardField {
+  max-width: 100vw;
+  padding: 1em;
+  display: grid;
+  justify-items: center;
+  gap: 3em;
+}
