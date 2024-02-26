@@ -44,7 +44,7 @@ export default function App() {
 
   useEffect(() => {
     fetch(
-      `http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=bbcc545698a179be8fefc4ef44ce2c0d&limit=12&format=json`,
+      `https://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=${artist}&api_key=bbcc545698a179be8fefc4ef44ce2c0d&limit=12&format=json`,
     )
       .then((response) => {
         return response.json();
