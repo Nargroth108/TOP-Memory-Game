@@ -19,18 +19,27 @@ export default function App() {
   }
 
   function changeCardClickedValue(card) {
-    const newCardData = cardData.map((item, index) => {
-      if (index === card.id) {
-        item.clicked = true;
-        return item;
-      } else {
-        return item;
-      }
-    });
+    if (card.clicked === false) {
+      const newCardData = cardData.map((item, index) => {
+        if (index === card.id) {
+          item.clicked = true;
+          return item;
+        } else {
+          return item;
+        }
+      });
 
-    shuffleArray(newCardData);
+      shuffleArray(newCardData);
+      setCardData(newCardData);
+    } else {
+      const newCardData = cardData.map((item) => {
+        item.clicked = false;
+        return item;
+      });
 
-    setCardData(newCardData);
+      shuffleArray(newCardData);
+      setCardData(newCardData);
+    }
   }
 
   useEffect(() => {
