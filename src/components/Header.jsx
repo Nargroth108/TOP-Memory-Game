@@ -29,21 +29,21 @@ export default function Header({ setArtist, cardData }) {
       <div className="descriptionContainer">
         <h1>Memory Game</h1>
         <p className="description">
-          Get points for clicking different images. Your streak resets if you
+          Get points for clicking different images. Your score resets if you
           click on the same image twice! <br /> Can you reach 12 points?
         </p>
       </div>
       <div className="sideContainer">
-        <div className="inputContainer">
-          <label htmlFor="artist">
-            <input
-              type="text"
-              name="artist"
-              id="artist"
-              onKeyDown={handleKeyDown}
-            />
-          </label>
-        </div>
+        <label htmlFor="artist">
+          Change to new artist:
+          <input
+            placeholder="Hit Enter to confirm"
+            type="text"
+            name="artist"
+            id="artist"
+            onKeyDown={handleKeyDown}
+          />
+        </label>
         <div className="scoreContainer">
           <p className="score">Score: {score}</p>
           <p className="bestScore">Best Score: {highScore}</p>

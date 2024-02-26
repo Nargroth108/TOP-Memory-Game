@@ -76,8 +76,6 @@ export default function App() {
     };
   }, [artist]);
 
-  console.log(cardData);
-
   return (
     <>
       <Header setArtist={setArtist} cardData={cardData} />

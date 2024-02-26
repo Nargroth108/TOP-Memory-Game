@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import "../styles/CardField.css";
 
 export default function Card({ card, changeCardClickedValue }) {
   return (

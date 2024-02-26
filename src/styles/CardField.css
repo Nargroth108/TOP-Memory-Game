@@ -7,3 +7,13 @@
   justify-items: center;
   text-align: center;
 }
+
+.card {
+  padding: 1em;
+  display: grid;
+  gap: 1em;
+  background-color: rgb(195, 225, 234);
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.75);
+}
