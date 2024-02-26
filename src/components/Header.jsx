@@ -27,7 +27,7 @@ export default function Header({ setArtist, cardData }) {
   return (
     <header>
       <div className="descriptionContainer">
-        <h1>Memory Game</h1>
+        <h1>Album Cover Memory Game</h1>
         <p className="description">
           Get points for clicking different images. Your score resets if you
           click on the same image twice! <br /> Can you reach 12 points?
